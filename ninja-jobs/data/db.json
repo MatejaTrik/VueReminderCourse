@@ -1,0 +1,19 @@
+{
+    "jobs": [{
+            "title": "Ninja Ux Desginer",
+            "id": 1,
+            "details": "lorem"
+        },
+        {
+            "title": "Ninja Web Dev",
+            "id": 2,
+            "details": "ispum"
+        },
+        {
+            "title": "Ninja Vue Dev",
+            "id": 3,
+            "details": "loremus"
+        }
+    ],
+    "blogs": []
+}
