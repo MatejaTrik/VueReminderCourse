@@ -1,0 +1,54 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "welcome to the new blog",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "tags": [
+        "webdev",
+        "coding",
+        "news"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "top 5 CSS tips",
+      "body": "Dobro dosli na nasu maliuuu maskraraduuu",
+      "tags": [
+        "css",
+        "webdev",
+        "coding"
+      ]
+    },
+    {
+      "title": "Prvi ",
+      "body": "Naslov hehe",
+      "tags": [
+        "js",
+        "css",
+        "vue"
+      ],
+      "id": 3
+    },
+    {
+      "title": "This is The King Of Hoes",
+      "body": "Tell me how it feels to be with a p i m p",
+      "tags": [
+        "pimp",
+        "50",
+        "cent"
+      ],
+      "id": 4
+    },
+    {
+      "title": "asdfsdfasdf",
+      "body": "adfsdfasdf",
+      "tags": [
+        "fasdsads",
+        "dfsfddfdf",
+        "dfdfdfdfdf"
+      ],
+      "id": 5
+    }
+  ]
+}
