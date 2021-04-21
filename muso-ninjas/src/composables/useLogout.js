@@ -10,7 +10,6 @@ const logout = async () => {
   error.value = null
   isPending.value = true
 
-
   try {
     await projectAuth.signOut()
     isPending.value = false
@@ -23,7 +22,7 @@ const logout = async () => {
 }
 
 const useLogout = () => {
-  return { error, logout,isPending }
+  return { error, logout, isPending }
 }
 
 export default useLogout

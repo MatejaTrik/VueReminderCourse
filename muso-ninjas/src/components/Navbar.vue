@@ -1,42 +1,48 @@
 <template>
   <div class="navbar">
-      <nav>
-          <img src="@/assets/ninja.png" alt="NINJA KURAC">
-          <h1><router-link :to="{ name: 'Home' }">Muso Ninja Trikela</router-link></h1>
-          <div class="links">
-              <div v-if="user">
-                <button @click="handleClick">LogOut</button>
-              </div>
-              <div v-else>
-                <router-link class="btn" :to="{ name: 'Signup' }">Singup</router-link>
-                <router-link class="btn" :to="{ name: 'Login' }">Login</router-link>
-                  
-              </div>
-          </div>
-      </nav>
+    <nav>
+      <img src="@/assets/ninja.png"/>
+      <h1><router-link :to="{ name: 'Home' }">Muso Ninjas</router-link></h1>
+      <div class="links">
+        <div v-if="user">
+          <router-link :to="{ name: 'CreatePlaylist' }">Create Playlist</router-link>
+          <router-link :to="{ name: 'UserPlaylists' }">My Playlists</router-link>
+          <span>Hi there, {{ user.displayName }}</span>
+          <button @click="handleClick">Logout</button>
+        </div>
+        <div v-else>
+          <router-link class="btn" :to="{ name: 'Signup' }">Signup</router-link>
+          <router-link class="btn" :to="{ name: 'Login' }">Login</router-link>
+        </div>
+      </div>
+    </nav>
   </div>
 </template>
 
 <script>
+// challenge
+//   - only show the logout button if we are logged in
+//   - only show the signup and login links if we are not logged in
+//   - use the getUser composable to help
+
 import getUser from '../composables/getUser'
 import useLogout from '../composables/useLogout'
-import {useRouter} from 'vue-router'
-
+import { useRouter } from 'vue-router'
 
 export default {
-    setup() {
-        const { user } = getUser()
-        const { logout } = useLogout()
-        const router = useRouter()
+  setup() {
+    const { user } = getUser()
+    const { logout } = useLogout()
+    const router = useRouter()
 
-        const handleClick = async () => {
-            await logout()
-            console.log('User Loged Out...')
-            router.push({ name: 'Login' })
-        }
-
-        return { handleClick, user }
+    const handleClick = async () => {
+      await logout()
+      console.log('logged out')
+      router.push({ name: 'Login' })
     }
+
+    return { handleClick, user }
+  }
 }
 </script>
 
@@ -64,5 +70,12 @@ export default {
   nav .links a, button {
     margin-left: 16px;
     font-size: 14px;
+  }
+  span {
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 16px;
+    padding-left: 16px;
+    border-left: 1px solid #eee;
   }
 </style>
